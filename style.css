@@ -1,0 +1,12 @@
+li.pronto {
+    color: green;
+    text-decoration: line-through;
+}
+
+button.pronto-button {
+    background-color: blue;
+    color: white;
+    border-radius: 999px;
+    border: none;
+    text-decoration: none;
+}

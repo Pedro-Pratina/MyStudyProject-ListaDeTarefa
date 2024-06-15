@@ -19,10 +19,18 @@ function enviar() {
         });
 
         const feitoButton = document.createElement('button')
-        feitoButton
+        feitoButton.className = 'pronto-button'
+        feitoButton.innerHTML = '&times;'
+        feitoButton.addEventListener('click', () => {
+            if (confirm('Certeza que a tarefa está pronta?')) {
+                li.classList.add('pronto')
+                feitoButton.remove()
+            }
+        })
 
         // Adicionar o botão de remoção ao elemento li
         li.appendChild(removeButton);
+        li.appendChild(feitoButton)
 
         let listaConstruir = document.querySelector('ul');
         listaConstruir.appendChild(li);
@@ -33,21 +41,4 @@ function enviar() {
     } else {
         alert("Falta Algo");
     }
-
-    /*const removeButton = document.createElement('button');
-    removeButton.className = 'remove-task-button';
-    removeButton.innerHTML = '&times;';
-    removeButton.addEventListener('click', () => {
-        li.remove();
-        saveTasks();
-    });
-
-    li.appendChild(removeButton);
-
-    li.addEventListener('click', () => {
-        li.classList.toggle('completed');
-        saveTasks();
-    });
-
-    return li;*/
 }
